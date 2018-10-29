@@ -169,7 +169,7 @@ var ballRun = (function(){
 		function run() {
 
 			//快速循环，实现小球的运动
-			time = setInterval(function() {
+			var time = setInterval(function() {
 				
 				//遍历数组，判断小球是否碰撞到浏览器边缘
 				spotArray.forEach(function(value,index) {
