@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="js/ballRun.main.min.js"></script>
+    <style>
+        * {
+
+            padding:0;
+            margin:0;
+
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+<script>
+
+    ballRun({
+
+        //获取元素(该元素作为canvas的父元素，canvas作为该元素的背景层)
+        Element: "body",
+        //小球数量
+        Number: 50,
+        //小球半径
+        Radius: 8,
+        //小球横向速度范围
+        spotSpeedX: 0.3,
+        //小球纵向速度范围
+        spotSpeedY: 0.3,
+        //小球覆盖样式:"lighter"颜色叠加,"xor"覆盖区域显示白色
+        globalCompositeOperation: "xor",
+        //小球透明度
+        globalAlpha: 0.3,
+        //配置小球颜色数组(随机呈现小球颜色)
+        spotColor: ["rgb(20, 243, 243)","rgb(56, 255, 255)","rgb(199, 255, 255)"]
+
+    })
+    
+</script>
+</html>
