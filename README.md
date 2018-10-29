@@ -107,7 +107,7 @@ ballRun({
 
 <br/>
 
->git clone https://github.com/MikuBlog/warning.git
+>git clone https://github.com/MikuBlog/Ball.git
 
 
 
