@@ -99,7 +99,7 @@ ballRun({
 
 >在所需组件内引入```import ballRun from "./xxx/ballRun.main.min.js```
 
->调用ballRun函数使用即可
+>调用ballRun函数传入配置参数使用即可
 
 <br/>
 
