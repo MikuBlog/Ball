@@ -1,16 +1,18 @@
-
 var ballRun = (function(){
 
     return function(obj) {
 
-   		//获取画布
-        	var Canvas
-	
+    	//得到body的宽和高
+        var Canvas
+		//获取画布
 		var canvas
 		//获取画布上下文
 		var ctx
 
-		var spotArray = []
+        var spotArray = []
+        
+        //存放计时器引用
+        var time
 
 		//判断是否传入对象
 		if(obj) {
@@ -84,28 +86,28 @@ var ballRun = (function(){
 		//制作画布
         function createCas() {
 
-			Canvas = document.createElement('canvas')
+            Canvas = document.createElement('canvas')
 			
-			Canvas.id = "canvas"
-			
-			Canvas.width = width
-			
-			Canvas.height = height
+            Canvas.id = "canvas"
+                
+            Canvas.width = width
+                
+            Canvas.height = height
 
-			Canvas.style.position = "absolute"
+            Canvas.style.position = "absolute"
 
-			Canvas.style.top = 0
+            Canvas.style.top = 0
 
-			Canvas.style.left = 0
+            Canvas.style.left = 0
 
-			Canvas.style.zIndex = -1
+            Canvas.style.zIndex = -1
 
-			cxo.appendChild(Canvas)
-			
-			canvas = document.querySelector('#canvas')
-			
-			ctx = canvas.getContext('2d')
-			
+            cxo.appendChild(Canvas)
+                
+            canvas = document.querySelector('#canvas')
+                
+            ctx = canvas.getContext('2d')
+
         }
 		
 		//制作小球，添加到小球数组中
@@ -169,7 +171,7 @@ var ballRun = (function(){
 		function run() {
 
 			//快速循环，实现小球的运动
-			var time = setInterval(function() {
+			time = setInterval(function() {
 				
 				//遍历数组，判断小球是否碰撞到浏览器边缘
 				spotArray.forEach(function(value,index) {
@@ -246,26 +248,38 @@ var ballRun = (function(){
 		}
 			
 		//当浏览器窗口改变的时候，画布大小自适应
+		function nature() {
 
-		window.addEventListener('resize',function() {
+            		//浏览器视窗大小改变后重置画布宽高
+            		var width = parseInt(window.getComputedStyle(cxo).width)
 
-			//浏览器视窗大小改变后重置画布宽高
-			width = parseInt(window.getComputedStyle(cxo).width)
+            		var height = parseInt(window.getComputedStyle(cxo).height)
 
-			height = parseInt(window.getComputedStyle(cxo).height)
-			
-			//删除画布
-			cxo.removeChild(canvas)
-			
-			//重新创建画布
-			createCas()
-			
-			//画布大小为当前的浏览器视窗大小
-			canvas.width = width
+            		//兼容vue路由切换后获取不到背景容器宽高
+            		if(!width || !height) {
 
-			canvas.height = height
+                		window.removeEventListener('resize',nature)
 
-		})
+                		clearInterval(time)
+
+               		 	return
+
+            		}
+                
+            		//删除画布
+            		cxo.removeChild(canvas)
+
+            		//重新创建画布
+            		createCas()
+                
+            		//画布大小为当前的浏览器视窗大小
+            		canvas.width = width
+
+            		canvas.height = height
+
+		}
+
+		window.addEventListener('resize',nature)
 			
 		//执行接口
 		letGo()
