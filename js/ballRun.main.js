@@ -2,9 +2,9 @@ var ballRun = (function(){
 
     return function(obj) {
 
-    	//得到body的宽和高
-        var Canvas
-		//获取画布
+	    	//获取画布
+        	var Canvas
+	
 		var canvas
 		//获取画布上下文
 		var ctx
