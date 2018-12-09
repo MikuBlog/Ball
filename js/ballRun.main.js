@@ -250,7 +250,7 @@ var ballRun = (function(){
 		// 当浏览器窗口改变的时候，画布大小自适应
 		function nature() {
 
-            		// 浏览器视窗大小改变后重置画布宽高
+            		// 浏览器视窗大小改变后重置画布宽高问题
             		var width = parseInt(window.getComputedStyle(cxo).width)
 
             		var height = parseInt(window.getComputedStyle(cxo).height)
