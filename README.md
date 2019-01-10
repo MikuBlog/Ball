@@ -50,7 +50,7 @@
 
 >直接安装使用 ```cnpm install ball-master```
 
->```import ballRun from 'ball-master'``` 
+>在所需组件中引入```import ballRun from 'ball-master'``` 
 
 <br/>
 
