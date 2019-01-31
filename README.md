@@ -48,7 +48,7 @@
 
 <br/>
 
->直接安装使用 ```cnpm install ball-master```
+>直接安装使用 ```npm install ball-master```
 
 >在所需组件中引入```import ballRun from 'ball-master'``` 
 
@@ -103,17 +103,6 @@ ballRun({
 
 <br/>
 
-## vue使用
-
-<br/>
-
->在```ballRun.main.min.js```末尾添加```export default ballRun;```
-
->在所需组件内引入```import ballRun from "./xxx/ballRun.main.min.js```
-
->调用ballRun函数传入配置参数使用即可
-
-<br/>
 
 ## 下载
 
